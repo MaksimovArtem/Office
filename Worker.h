@@ -5,6 +5,7 @@
 #include "Accounting.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Worker:
 	public HR, public Accounting
@@ -16,7 +17,7 @@ class Worker:
 	unsigned int multiplier;
 	unsigned int currentSalary = 0;
 
-protected:
+public:
 	
 	std::string getName() override;
 	std::string getLastname() override;
@@ -34,6 +35,9 @@ protected:
 public:
 	Worker(std::string, std::string, std::string,unsigned int,unsigned int);
 	~Worker() = default;
+	std::string toString(Worker *);
+
+	//std::ostream& operator<<(std::ostream& str, Worker& p);
 };
 
 #endif

@@ -15,6 +15,14 @@ Worker * Developer::getBoss()
 
 void Developer::setBoss(Worker *newBoss)
 {
-	getBoss()->delSubordinates(this);
-	boss = (TeamLeader *)newBoss;
+	if ((this->getBoss()!=nullptr))
+	{
+		this->getBoss()->delSubordinates(this);
+	}
+	else {
+		
+		boss = (TeamLeader *)newBoss;
+		newBoss->addSubordinates(this);
+	}
+	
 }

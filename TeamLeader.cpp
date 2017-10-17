@@ -15,7 +15,14 @@ Worker * TeamLeader::getBoss()
 
 void TeamLeader::setBoss(Worker *newBoss)
 {
-	boss = (Manager *)newBoss;
+	if ((this->getBoss() != nullptr))
+	{
+		this->getBoss()->delSubordinates(this);
+	}
+	boss = (Manager *) newBoss;
+	newBoss->addSubordinates(this);
+	
+
 }
 
 std::vector<Worker *> TeamLeader::getSubordinates() 

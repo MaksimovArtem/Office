@@ -1,5 +1,5 @@
 #include "Worker.h"
-
+#include <iostream>
 
 
 Worker::Worker(std::string name_,std::string lastname_, std::string email_,unsigned int hours_, unsigned int multiplier_) 
@@ -65,3 +65,14 @@ std::vector<Worker *> Worker::delSubordinates(Worker *)
 	std::vector<Worker *> result;
 	return result;
 }
+
+std::string Worker::toString(Worker *worker)
+{
+	std::string result = worker->getName() + ", " + worker->getLastname() + ", " + worker->getEmail();
+	return result;
+}
+/*
+std::ostream& operator<<(std::ostream& str, Worker* p) 
+{
+	return str << this->toString(p);
+}*/
