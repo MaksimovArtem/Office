@@ -19,15 +19,24 @@ private:
 	unsigned int currentSalary = 0;
 
 public:
+	//HR methods override
 	std::string getName() override;
 	std::string getLastname() override;
     std::string getEmail() override;
+	void setName(std::string &) override;
+	void setLastname(std::string &) override;
+	void setEmail(std::string &) override;
+
+	//Accounting methods override
     unsigned int getHours() override;
 	unsigned int getProfessionCoefficient() override;
-	void setSalary() override;
 	unsigned int getSalary() override;
-	
+	void setHours(unsigned int &) override;
+	void setProfessionCoefficient(unsigned int &) override;
+	void setSalary() override;
+	void setSalary(unsigned int &) override;
 
+	//Worker methods
 	virtual Worker *getBossPointer() = 0;
 	virtual std::string getBossName() = 0;
 	virtual void setBoss(Worker*) = 0;
