@@ -8,13 +8,12 @@ Manager::Manager(std::string mName, std::string mLastname, std::string mEmail, u
 
 Worker* Manager::getBossPointer()
 {
-	std::cout << "This worker has no boss" << std::endl;
 	return nullptr;
 }
 
 std::string Manager::getBossName()
 {
-	std::cout << "This worker has no boss" << std::endl;
+	
 	std::string error = "This man is already a boss";
 	return error;
 }
@@ -26,7 +25,7 @@ void Manager::setBoss(Worker *worker)
 
 std::vector<Worker *> Manager::getSubordinates()
 {
-	std::cout << "Boss [" << this->toString(this) << "] has [" << subordinatesToString() << "] in workers list" << std::endl;
+	
 	return mSubordinates;
 }
 

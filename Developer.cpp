@@ -26,28 +26,22 @@ void Developer::setBoss(Worker *newBoss)
 	}
 	boss = (TeamLeader *)newBoss;
 	newBoss->addSubordinates(this);
-	getBossName();
-	std::cout << "Worker: [" << this->toString(this) << "] now have [" << this->getBossName() << "] as boss" << std::endl;
-	
 }
 
 std::vector<Worker *> Developer::getSubordinates()
 {
-	std::cout << "This worker has no subordinates";
 	std::vector<Worker *> result;
 	return result;
 }
 
 std::vector<Worker *> Developer::addSubordinates(Worker * worker)
 {
-	std::cout << "This worker has no subordinates";
 	std::vector<Worker *> result;
 	return result;
 }
 
 std::vector<Worker *> Developer::delSubordinates(Worker *worker)
 {
-	std::cout << "This worker has no subordinates";
 	std::vector<Worker *> result;
 	return result;
 }

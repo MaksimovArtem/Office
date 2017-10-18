@@ -19,7 +19,6 @@ private:
 	unsigned int currentSalary = 0;
 
 public:
-	
 	std::string getName() override;
 	std::string getLastname() override;
     std::string getEmail() override;
@@ -40,8 +39,7 @@ public:
 	Worker(std::string, std::string, std::string,unsigned int,unsigned int);
 	~Worker() = default;
 	std::string toString(Worker *);
-	
-	
 };
+
 
 #endif

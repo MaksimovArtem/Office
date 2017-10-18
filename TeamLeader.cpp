@@ -26,14 +26,11 @@ void TeamLeader::setBoss(Worker *newBoss)
 	}
 	boss = (Manager *) newBoss;
 	newBoss->addSubordinates(this);
-
-	std::cout << "Worker: [" << this->toString(this) << "] now have [" << this->getBossName() << "] as boss" << std::endl;
-
 }
 
 std::vector<Worker *> TeamLeader::getSubordinates() 
 {
-	std::cout <<"Boss ["<<this->toString(this)<<"] has ["<< subordinatesToString()<<"] in workers list" << std::endl;
+	
 	return tSubordinates;
 }
 
