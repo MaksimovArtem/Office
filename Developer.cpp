@@ -8,21 +8,47 @@ Developer::Developer(std::string dName, std::string dLastname, std::string dEmai
 	boss = nullptr;
 }
 
-Worker * Developer::getBoss()
+Worker * Developer::getBossPointer()
 {
 	return (Worker *)boss;
 }
 
+std::string Developer::getBossName()
+{
+	return getBossPointer()->toString(getBossPointer());
+}
+
 void Developer::setBoss(Worker *newBoss)
 {
-	if ((this->getBoss()!=nullptr))
+	if ((this->getBossPointer()!=nullptr))
 	{
-		this->getBoss()->delSubordinates(this);
+		this->getBossPointer()->delSubordinates(this);
 	}
-	else {
-		
-		boss = (TeamLeader *)newBoss;
-		newBoss->addSubordinates(this);
-	}
+	boss = (TeamLeader *)newBoss;
+	newBoss->addSubordinates(this);
+	getBossName();
+	std::cout << "Worker: [" << this->toString(this) << "] now have [" << this->getBossName() << "] as boss" << std::endl;
 	
 }
+
+std::vector<Worker *> Developer::getSubordinates()
+{
+	std::cout << "This worker has no subordinates";
+	std::vector<Worker *> result;
+	return result;
+}
+
+std::vector<Worker *> Developer::addSubordinates(Worker * worker)
+{
+	std::cout << "This worker has no subordinates";
+	std::vector<Worker *> result;
+	return result;
+}
+
+std::vector<Worker *> Developer::delSubordinates(Worker *worker)
+{
+	std::cout << "This worker has no subordinates";
+	std::vector<Worker *> result;
+	return result;
+}
+

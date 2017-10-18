@@ -10,6 +10,7 @@
 class Worker:
 	public HR, public Accounting
 {
+private:
 	std::string name;
 	std::string lastname;
 	std::string email;
@@ -24,20 +25,23 @@ public:
     std::string getEmail() override;
     unsigned int getHours() override;
 	unsigned int getProfessionCoefficient() override;
-	unsigned int setSalary() override;
+	void setSalary() override;
+	unsigned int getSalary() override;
+	
 
-	virtual Worker *getBoss();
-	virtual void setBoss(Worker*);
-	virtual std::vector<Worker *> getSubordinates();
-	virtual std::vector<Worker *> addSubordinates(Worker *);
-	virtual std::vector<Worker *> delSubordinates(Worker *);
+	virtual Worker *getBossPointer() = 0;
+	virtual std::string getBossName() = 0;
+	virtual void setBoss(Worker*) = 0;
+	virtual std::vector<Worker *> getSubordinates() = 0;
+	virtual std::vector<Worker *> addSubordinates(Worker *) = 0;
+	virtual std::vector<Worker *> delSubordinates(Worker *) = 0;
 
 public:
 	Worker(std::string, std::string, std::string,unsigned int,unsigned int);
 	~Worker() = default;
 	std::string toString(Worker *);
-
-	//std::ostream& operator<<(std::ostream& str, Worker& p);
+	
+	
 };
 
 #endif

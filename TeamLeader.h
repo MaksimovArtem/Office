@@ -12,14 +12,19 @@ private:
 	Manager* boss;
 	std::vector<Worker *> tSubordinates;
 public:
-	Worker *getBoss() override;
+	Worker *getBossPointer() override;
+	std::string getBossName() override;
 	void setBoss(Worker *) override;
+
 	std::vector<Worker *> getSubordinates() override;
 	std::vector<Worker *> addSubordinates(Worker *) override;
 	std::vector<Worker *> delSubordinates(Worker *) override;
 
+public:
 	TeamLeader(std::string, std::string, std::string, unsigned int, unsigned int);
 	~TeamLeader() = default;
+	std::string subordinatesToString();
+
 };
 
 #endif

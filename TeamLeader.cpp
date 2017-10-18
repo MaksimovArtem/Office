@@ -8,25 +8,32 @@ TeamLeader::TeamLeader(std::string tName, std::string tLastname, std::string tEm
 	boss = nullptr;
 }
 
-Worker * TeamLeader::getBoss()
+Worker * TeamLeader::getBossPointer()
 {
 	return (Worker *)boss;
 }
 
+std::string TeamLeader::getBossName()
+{
+	return getBossPointer()->toString(getBossPointer());
+}
+
 void TeamLeader::setBoss(Worker *newBoss)
 {
-	if ((this->getBoss() != nullptr))
+	if ((this->getBossPointer() != nullptr))
 	{
-		this->getBoss()->delSubordinates(this);
+		this->getBossPointer()->delSubordinates(this);
 	}
 	boss = (Manager *) newBoss;
 	newBoss->addSubordinates(this);
-	
+
+	std::cout << "Worker: [" << this->toString(this) << "] now have [" << this->getBossName() << "] as boss" << std::endl;
 
 }
 
 std::vector<Worker *> TeamLeader::getSubordinates() 
 {
+	std::cout <<"Boss ["<<this->toString(this)<<"] has ["<< subordinatesToString()<<"] in workers list" << std::endl;
 	return tSubordinates;
 }
 
@@ -52,4 +59,14 @@ std::vector<Worker *> TeamLeader::delSubordinates(Worker *worker)
 	
 }
 
-
+std::string TeamLeader::subordinatesToString()
+{
+	std::string result;
+	
+	for (auto &item : tSubordinates)
+	{
+		result += item->toString(item) + "; ";
+	}
+	return result;
+	
+}

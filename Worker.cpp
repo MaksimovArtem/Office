@@ -33,37 +33,15 @@ unsigned int Worker::getProfessionCoefficient()
 	return multiplier;
 }
 
-unsigned int Worker::setSalary()
+void Worker::setSalary()
 {
-	return (currentSalary = hours * multiplier);
+	currentSalary = hours * multiplier;
 }
 
-Worker* Worker::getBoss()
+unsigned int Worker::getSalary()
 {
-	return nullptr;
-}
-
-void Worker::setBoss(Worker*)
-{
-
-}
-
-std::vector<Worker *> Worker::getSubordinates()
-{
-	std::vector<Worker *> result;
-	return result;
-}
-
-std::vector<Worker *> Worker::addSubordinates(Worker *)
-{
-	std::vector<Worker *> result;
-	return result;
-}
-
-std::vector<Worker *> Worker::delSubordinates(Worker *)
-{
-	std::vector<Worker *> result;
-	return result;
+	setSalary();
+	return currentSalary;
 }
 
 std::string Worker::toString(Worker *worker)
@@ -71,8 +49,3 @@ std::string Worker::toString(Worker *worker)
 	std::string result = worker->getName() + ", " + worker->getLastname() + ", " + worker->getEmail();
 	return result;
 }
-/*
-std::ostream& operator<<(std::ostream& str, Worker* p) 
-{
-	return str << this->toString(p);
-}*/
