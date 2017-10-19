@@ -74,8 +74,8 @@ void Worker::setSalary(unsigned int &salary_)
 	currentSalary = salary_;
 }
 
-std::string Worker::toString(Worker *worker)
+std::string Worker::toString()
 {
-	std::string result = worker->getName() + ", " + worker->getLastname() + ", " + worker->getEmail();
+	std::string result = getName() + ", " + getLastname() + ", " + getEmail();
 	return result;
 }

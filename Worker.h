@@ -47,7 +47,7 @@ public:
 public:
 	Worker(std::string, std::string, std::string,unsigned int,unsigned int);
 	~Worker() = default;
-	std::string toString(Worker *);
+	std::string toString();
 };
 
 

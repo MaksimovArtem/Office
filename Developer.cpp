@@ -15,7 +15,7 @@ Worker * Developer::getBossPointer()
 
 std::string Developer::getBossName()
 {
-	return getBossPointer()->toString(getBossPointer());
+	return getBossPointer()->toString();
 }
 
 void Developer::setBoss(Worker *newBoss)

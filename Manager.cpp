@@ -57,7 +57,7 @@ std::string Manager::subordinatesToString()
 
 	for (auto &item : mSubordinates)
 	{
-		result += item->toString(item) + "; ";
+		result += item->toString() + "; ";
 	}
 	return result;
 

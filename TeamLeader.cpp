@@ -15,7 +15,7 @@ Worker * TeamLeader::getBossPointer()
 
 std::string TeamLeader::getBossName()
 {
-	return getBossPointer()->toString(getBossPointer());
+	return getBossPointer()->toString();
 }
 
 void TeamLeader::setBoss(Worker *newBoss)
@@ -62,7 +62,7 @@ std::string TeamLeader::subordinatesToString()
 	
 	for (auto &item : tSubordinates)
 	{
-		result += item->toString(item) + "; ";
+		result += item->toString() + "; ";
 	}
 	return result;
 	
